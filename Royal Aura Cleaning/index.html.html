@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Aura Cleaning - Premium Cleaning Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --maroon: #7B1536;
+    --maroon-dark: #5a0f27;
+    --maroon-light: #9b1a42;
+    --gold: #C8A84B;
+    --gold-light: #e0c070;
+    --gold-dark: #a08030;
+    --white: #ffffff;
+    --off-white: #faf8f5;
+    --gray-light: #f5f0eb;
+    --gray-text: #555;
+    --dark: #1a0a0f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+  }
+
+  /* ── TOP BAR ── */
+  .topbar {
+    background: var(--maroon-dark);
+    color: var(--gold-light);
+    padding: 8px 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+  .topbar a { color: var(--gold-light); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .topbar a:hover { color: var(--white); }
+  .topbar svg { width: 14px; height: 14px; fill: currentColor; }
+
+  /* ── NAVBAR ── */
+  nav {
+    background: var(--maroon);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 80px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 145px;
+    height: 130px;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    line-height: 1;
+  }
+
+  .logo-text .brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    display: block;
+  }
+  .logo-text .brand span { color: var(--gold); }
+  .logo-text .sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  .nav-links > li {
+    position: relative;
+  }
+
+  .nav-links > li > a {
+    display: block;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+    text-transform: uppercase;
+  }
+
+  .nav-links > li > a:hover { color: var(--gold-light); }
+
+  .nav-links > li:hover .dropdown { display: grid; }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 24px;
+    padding: 20px 24px;
+    min-width: 360px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.14);
+    border-top: 3px solid var(--gold);
+    z-index: 999;
+  }
+
+  .dropdown a {
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: var(--gray-text);
+    font-size: 13px;
+    transition: color 0.2s;
+    border-bottom: 1px solid #f0e8e0;
+  }
+  .dropdown a:hover { color: var(--maroon); }
+
+  .nav-cta {
+    background: var(--maroon);
+    color: var(--white) !important;
+    padding: 10px 22px !important;
+    border-radius: 3px;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--dark) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    background: url('hero-bg.jpg') center center / cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(80, 5, 25, 0.72);
+  }
+
+  .hero-glow {
+    position: absolute;
+    right: -10%;
+    top: -20%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(200,168,75,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-text {}
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(200,168,75,0.15);
+    border: 1px solid rgba(200,168,75,0.4);
+    color: var(--gold-light);
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 32px;
+    max-width: 580px;
+  }
+
+  .hero-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin-bottom: 36px;
+    list-style: none;
+  }
+
+  .hero-bullets li {
+    color: var(--gold-light);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-bullets li::before {
+    content: '✦';
+    font-size: 10px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 14px 32px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,168,75,0.4); }
+
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.5);
+    color: var(--white);
+    padding: 13px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Hero Form */
+  .hero-form-card {
+    background: var(--white);
+    padding: 36px 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    position: relative;
+  }
+
+  .hero-form-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+
+  .hero-form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--maroon);
+    margin-bottom: 6px;
+  }
+
+  .hero-form-card p {
+    font-size: 13px;
+    color: var(--gray-text);
+    margin-bottom: 24px;
+  }
+
+  .form-field {
+    margin-bottom: 14px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #e0d5c8;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+    background: var(--off-white);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus { border-color: var(--gold); background: var(--white); }
+
+  .form-field textarea { resize: vertical; height: 80px; }
+
+  .form-submit {
+    width: 100%;
+    background: var(--maroon);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--gold); color: var(--dark); }
+
+  /* ── AWARDS BAR ── */
+  .awards-bar {
+    background: var(--off-white);
+    border-top: 1px solid #e8ddd0;
+    border-bottom: 1px solid #e8ddd0;
+    padding: 28px 40px;
+  }
+
+  .awards-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+  }
+
+  .award-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    color: var(--maroon);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  .award-badge svg { width: 32px; height: 32px; fill: var(--gold); }
+
+  /* ── STATS ── */
+  .stats-section {
+    background: var(--maroon);
+    padding: 60px 40px;
+  }
+
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(200,168,75,0.3);
+  }
+
+  .stat-item {
+    background: var(--maroon);
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ── ABOUT ── */
+  .about-section {
+    padding: 100px 40px;
+    background: var(--white);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-wrap .img-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-img-wrap .img-accent {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 55%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid var(--white);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  }
+
+  .about-placeholder {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 50%, var(--gold-dark) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+  }
+
+  .about-placeholder svg { width: 80px; height: 80px; fill: rgba(255,255,255,0.3); margin-bottom: 16px; }
+  .about-placeholder span { font-family: 'Playfair Display', serif; font-size: 24px; opacity: 0.5; }
+
+  .section-tag {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-tag::before { content: ''; display: block; width: 30px; height: 2px; background: var(--gold); }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: var(--maroon);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--gray-text);
+    margin-bottom: 24px;
+  }
+
+  .about-features {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .about-features li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .about-features li::before {
+    content: '✓';
+    width: 22px;
+    height: 22px;
+    background: var(--maroon);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ── SERVICES ── */
+  .services-section {
+    background: var(--gray-light);
+    padding: 100px 40px;
+  }
+
+  .services-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header .section-tag { justify-content: center; }
+  .section-header .section-tag::before { display: none; }
+
+  .services-group-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--maroon);
+    margin: 48px 0 28px;
+    padding-left: 16px;
+    border-left: 4px solid var(--gold);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-card {
+    background: var(--white);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(123,21,54,0.15);
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-img {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-img svg { width: 48px; height: 48px; fill: rgba(255,255,255,0.5); }
+
+  .service-card-body {
+    padding: 24px;
+  }
+
+  .service-card-body h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--maroon);
+    margin-bottom: 10px;
+  }
+
+  .service-card-body p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--gray-text);
+    margin-bottom: 16px;
+  }
+
+  .service-link {
+    color: var(--gold-dark);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .service-link:hover { color: var(--maroon); }
+
+  .services-cta { text-align: center; margin-top: 48px; }
+
+  /* ── WHY CHOOSE ── */
+  .why-section {
+    padding: 100px 40px;
+    background: var(--white);
+  }
+
+  .why-inner { max-width: 1200px; margin: 0 auto; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+  }
+
+  .why-card {
+    padding: 36px 28px;
+    border: 1px solid #e8ddd0;
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(200,168,75,0.12);
+  }
+
+  .why-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--maroon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .why-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+
+  .why-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--maroon);
+    margin-bottom: 12px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--gray-text);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    background: var(--maroon);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-section::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 400px;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .testimonial-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,168,75,0.25);
+    padding: 32px;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    color: var(--gold);
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testimonial-stars {
+    color: var(--gold);
+    font-size: 16px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-author {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .testimonial-role {
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── PROCESS ── */
+  .process-section {
+    background: var(--off-white);
+    padding: 100px 40px;
+  }
+
+  .process-inner { max-width: 1200px; margin: 0 auto; }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+    position: relative;
+  }
+
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    z-index: 0;
+  }
+
+  .process-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-circle {
+    width: 72px;
+    height: 72px;
+    background: var(--maroon);
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+
+  .step-circle span {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  .process-step h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    color: var(--maroon);
+    margin-bottom: 10px;
+  }
+
+  .process-step p {
+    font-size: 13.5px;
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--maroon-dark) 0%, var(--maroon) 50%, var(--maroon-light) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C8A84B' fill-opacity='0.06'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .cta-banner-inner { position: relative; max-width: 700px; margin: 0 auto; }
+
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .cta-banner h2 em { font-style: normal; color: var(--gold); }
+
+  .cta-banner p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 36px;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 72px 40px 0;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .footer-brand .brand-name span { color: var(--gold); }
+
+  .footer-brand p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 16px 0 24px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 14px;
+  }
+  .social-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+
+  .footer-col h5 {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(200,168,75,0.3);
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--gold); }
+
+  .footer-contact-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .footer-contact-item svg { width: 16px; height: 16px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
+  .footer-contact-item a { color: inherit; text-decoration: none; }
+  .footer-contact-item a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-bottom a { color: var(--gold); text-decoration: none; }
+
+  /* ── MOBILE MENU ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .hamburger span { width: 26px; height: 2px; background: var(--white); transition: all 0.3s; }
+
+  /* ── SCROLLED NAV ── */
+  nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.15); }
+
+  /* Gold divider */
+  .gold-divider {
+    text-align: center;
+    margin: 16px 0 40px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .gold-divider svg { width: 20px; height: 20px; fill: var(--gold); }
+
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-form-card { max-width: 480px; }
+    .about-inner { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .process-steps::before { display: none; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .stats-inner { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-content { padding: 60px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .topbar { padding: 8px 20px; font-size: 12px; }
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    animation: fadeInUp 0.7s ease both;
+  }
+  .hero-badge { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero p { animation-delay: 0.3s; }
+  .hero-bullets { animation-delay: 0.4s; }
+  .hero-btns { animation-delay: 0.5s; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:+15551234567">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    (555) 123-4567
+  </a>
+  <a href="mailto:info@royalaura.com">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    info@royalaura.com
+  </a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo">
+    <img src="Logo.png" class="logo-icon" alt="Royal Aura Cleaning Logo">
+    <div class="logo-text">
+      <span class="brand">ROYAL <span>AURA</span></span>
+      <span class="sub">Cleaning</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#">Services ▾</a>
+      <div class="dropdown">
+        <a href="#">Residential Cleaning</a>
+        <a href="#">Commercial Cleaning</a>
+        <a href="#">Deep Cleaning</a>
+        <a href="#">Move In/Out Cleaning</a>
+        <a href="#">Office Cleaning</a>
+        <a href="#">Post Construction</a>
+        <a href="#">Carpet Cleaning</a>
+        <a href="#">Window Cleaning</a>
+      </div>
+    </li>
+    <li>
+      <a href="#">Specialty ▾</a>
+      <div class="dropdown">
+        <a href="#">Power Washing</a>
+        <a href="#">Floor Restoration</a>
+        <a href="#">Fogging Disinfection</a>
+        <a href="#">Green Cleaning</a>
+      </div>
+    </li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">✦ Premium Cleaning Services ✦</div>
+      <h1>Cleaning with <em>Royalty</em><br>& Elegance</h1>
+      <p>Royal Aura Cleaning delivers white-glove cleaning services for homes and businesses. Trained, insured, and dedicated to spotless perfection — every time.</p>
+      <ul class="hero-bullets">
+        <li>Residential & Commercial</li>
+        <li>Fully Insured & Bonded</li>
+        <li>Eco-Friendly Products</li>
+        <li>Daily, Weekly or One-Time</li>
+        <li>Satisfaction Guaranteed</li>
+      </ul>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get Free Estimate</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+
+    <div class="hero-form-card" id="contact">
+      <h3>Get A Free Estimate</h3>
+      <p>Fill out the form and we'll get back to you within 24 hours.</p>
+      <div class="form-field">
+        <input type="text" placeholder="First Name *">
+      </div>
+      <div class="form-field">
+        <input type="email" placeholder="Email Address *">
+      </div>
+      <div class="form-field">
+        <input type="tel" placeholder="Phone Number">
+      </div>
+      <div class="form-field">
+        <input type="text" placeholder="Service Address">
+      </div>
+      <div class="form-field">
+        <textarea placeholder="Tell us about your cleaning needs..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you! We will contact you shortly.')">Submit Request</button>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS BAR -->
+<div class="awards-bar">
+  <div class="awards-inner">
+    <div class="award-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      Top Rated Cleaning Service
+    </div>
+    <div class="award-badge">
+      <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Fully Insured & Bonded
+    </div>
+    <div class="award-badge">
+      <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+      Background-Checked Staff
+    </div>
+    <div class="award-badge">
+      <svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Eco-Friendly Products
+    </div>
+    <div class="award-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Flexible Scheduling
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-number">500<sup style="font-size:0.5em">+</sup></span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">98<sup style="font-size:0.5em">%</sup></span>
+      <span class="stat-label">Satisfaction Rate</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">10<sup style="font-size:0.5em">+</sup></span>
+      <span class="stat-label">Years of Excellence</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="about-img.jpg" alt="Royal Aura Cleaning Team" style="width:100%;height:100%;object-fit:cover;border-radius:8px;display:block;">
+    </div>
+
+    <div class="about-text">
+      <div class="section-tag">About Royal Aura Cleaning</div>
+      <h2 class="section-title">Premium Cleaning with a Royal Touch</h2>
+      <p class="section-body">Royal Aura Cleaning was founded on one simple belief: every space deserves to shine like royalty. We bring precision, care, and professionalism to every home and business we serve.</p>
+      <p class="section-body">Our team of highly trained, background-checked, and fully insured cleaning professionals delivers consistent, spotless results — backed by our 100% satisfaction guarantee.</p>
+      <ul class="about-features">
+        <li>100% Satisfaction Guarantee</li>
+        <li>Fully Insured & Bonded</li>
+        <li>Background-Checked Staff</li>
+        <li>Eco-Friendly Products</li>
+        <li>Flexible Scheduling</li>
+        <li>Custom Cleaning Plans</li>
+        <li>Residential Services</li>
+        <li>Commercial Services</li>
+      </ul>
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary" style="background:var(--maroon);color:var(--white);">Request a Cleaning Plan</a>
+        <a href="#services" class="btn-outline" style="border-color:var(--maroon);color:var(--maroon);">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Our Premium Cleaning Services</h2>
+      <div class="gold-divider">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <p style="max-width:600px;margin:0 auto;color:var(--gray-text);line-height:1.7;">We offer a comprehensive suite of cleaning services tailored to keep your home or business looking its absolute best.</p>
+    </div>
+
+    <h3 class="services-group-title">Residential & Commercial Cleaning</h3>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service1.jpg" alt="Residential Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Residential Cleaning</h4>
+          <p>Professional home cleaning services tailored to your lifestyle. We handle kitchens, bathrooms, living areas and more with meticulous care.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service2.jpg" alt="Office Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Office Cleaning</h4>
+          <p>Routine office cleaning designed to keep the workplace clean, efficient, and inviting for staff and visitors.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service3.jpg" alt="Commercial Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Commercial Cleaning</h4>
+          <p>Comprehensive cleaning solutions for businesses of all sizes — retail stores, restaurants, medical offices, and more.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service4.jpg" alt="Move In Move Out" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Move In / Move Out</h4>
+          <p>Thorough cleaning for transitions — leave your old place spotless or prepare your new space for fresh beginnings.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service5.jpg" alt="Post Construction" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Post Construction</h4>
+          <p>Detailed cleanup after renovations or new construction — dust, debris, and residue removed to reveal a beautiful space.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service6.jpg" alt="Medical Office Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Medical Office Cleaning</h4>
+          <p>Professional-grade sanitization that meets and exceeds health industry standards for clinics and medical facilities.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="services-group-title">Specialty Cleaning Services</h3>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service7.jpg" alt="Deep Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Deep Cleaning</h4>
+          <p>A thorough, detailed cleaning that reaches every corner — leaving your space spotless and completely refreshed.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service8.jpg" alt="Window Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Window Cleaning</h4>
+          <p>Crystal-clear results — removing dirt, streaks, and smudges for maximum visibility and curb appeal.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service9.jpg" alt="Carpet Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Carpet Cleaning</h4>
+          <p>Professional steam cleaning that removes stains, dirt, and allergens — restoring your carpets' original look and feel.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service10.jpg" alt="Power Washing" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Power Washing</h4>
+          <p>High-pressure washing removes years of grime from driveways, patios, siding, and commercial exteriors.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service11.jpg" alt="Fogging Disinfection" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Fogging Disinfection</h4>
+          <p>Fine mist sanitization technology that kills germs and viruses on contact across large commercial spaces.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="padding:0;overflow:hidden;">
+          <img src="service12.jpg" alt="Green Eco Cleaning" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="service-card-body">
+          <h4>Green / Eco Cleaning</h4>
+          <p>Environmentally responsible cleaning using certified eco-friendly products — safe for your family, pets, and planet.</p>
+          <a href="#" class="service-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="services-cta">
+      <a href="#contact" class="btn-primary" style="background:var(--maroon);color:var(--white);">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="section-header">
+      <div class="section-tag">Why Royal Aura</div>
+      <h2 class="section-title">Why Clients Choose Us</h2>
+      <div class="gold-divider">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h4>Fully Insured & Bonded</h4>
+        <p>Complete peace of mind — our team is fully insured, bonded, and background-checked for your safety and security.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h4>Satisfaction Guaranteed</h4>
+        <p>We're not done until you're thrilled. If anything doesn't meet your expectations, we'll come back and make it right.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h4>Flexible Scheduling</h4>
+        <p>Daily, weekly, bi-weekly, or one-time — we work around your schedule, not the other way around.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Eco-Friendly Products</h4>
+        <p>We use only certified, environmentally safe cleaning products that are tough on grime but gentle on your family and the planet.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h4>Trained Professionals</h4>
+        <p>Our cleaning specialists undergo rigorous training to deliver consistent, high-quality results on every visit.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h4>Competitive Pricing</h4>
+        <p>Premium cleaning at fair prices. We offer customized quotes with no hidden fees — transparent pricing, royal results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="process-inner">
+    <div class="section-header">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title">Our Simple 4-Step Process</h2>
+      <div class="gold-divider">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-circle"><span>1</span></div>
+        <h4>Request a Quote</h4>
+        <p>Fill out our simple form or call us. Tell us about your space and cleaning needs.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle"><span>2</span></div>
+        <h4>Custom Plan</h4>
+        <p>We create a tailored cleaning plan that fits your schedule, space, and budget perfectly.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle"><span>3</span></div>
+        <h4>Royal Cleaning</h4>
+        <p>Our trained team arrives on time and delivers meticulous, top-to-bottom cleaning excellence.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle"><span>4</span></div>
+        <h4>Your Approval</h4>
+        <p>We do a final walkthrough to ensure you're 100% satisfied. Your approval is our standard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <div class="section-tag" style="color:var(--gold-light);justify-content:center;">
+        Client Testimonials
+      </div>
+      <h2 class="section-title" style="color:var(--white);">What Our Clients Say</h2>
+      <div class="gold-divider">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>Royal Aura transformed our office. The team was incredibly professional, thorough, and left everything spotless. We've used them weekly ever since. Truly royal service!</p>
+        <div class="testimonial-author">Sarah M.</div>
+        <div class="testimonial-role">Office Manager</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>I hired them for a deep clean before selling my home. They exceeded every expectation — my realtor couldn't believe how pristine it looked. Worth every penny.</p>
+        <div class="testimonial-author">James T.</div>
+        <div class="testimonial-role">Homeowner</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>Reliable, professional, and eco-conscious — exactly what our restaurant needed. The kitchen has never looked this clean. Royal Aura is our permanent cleaning partner.</p>
+        <div class="testimonial-author">Maria L.</div>
+        <div class="testimonial-role">Restaurant Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-banner-inner">
+    <h2>Ready for a <em>Royal Clean</em>?</h2>
+    <p>Contact us today for a free, no-obligation estimate. We'll create a custom cleaning plan that fits your needs and budget perfectly.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#contact" class="btn-primary">Get Free Estimate</a>
+      <a href="tel:+15551234567" class="btn-outline">(555) 123-4567</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="brand-name">ROYAL <span>AURA</span> CLEANING</div>
+      <p>Premium cleaning services delivered with professionalism, care, and a royal standard of excellence. Serving residential and commercial clients with pride.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">ig</a>
+        <a href="#" class="social-btn">tw</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#">Residential Cleaning</a></li>
+        <li><a href="#">Commercial Cleaning</a></li>
+        <li><a href="#">Deep Cleaning</a></li>
+        <li><a href="#">Office Cleaning</a></li>
+        <li><a href="#">Carpet Cleaning</a></li>
+        <li><a href="#">Window Cleaning</a></li>
+        <li><a href="#">Move In/Out</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Team</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        <a href="tel:+15551234567">(555) 123-4567</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <a href="mailto:info@royalaura.com">info@royalaura.com</a>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span>Serving Your Area</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <span>Mon–Sat: 7am – 7pm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2025 Royal Aura Cleaning. All rights reserved.</span>
+    <span><a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav shadow
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu toggle
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '80px';
+    links.style.left = '0';
+    links.style.right = '0';
+    links.style.background = '#fff';
+    links.style.padding = '20px';
+    links.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+    links.style.zIndex = '999';
+  }
+
+  // Animate stats on scroll
+  function animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+    stats.forEach(stat => {
+      const target = parseInt(stat.textContent);
+      if (isNaN(target)) return;
+      let current = 0;
+      const increment = target / 50;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        stat.textContent = Math.floor(current) + (stat.textContent.includes('%') ? '%' : '+');
+      }, 30);
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateStats();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) observer.observe(statsSection);
+</script>
+</body>
+</html>
